@@ -53,3 +53,29 @@
     ``(gdb) quit``   
     
     
+#### 二.断点
+
+1. display命令使得每次停下来都显示变量的值，然后继续往下走
+
+    ``(gdb) display xx``
+
+   也可以根据变量的编号undisplay
+
+2. break(b)命令设置断点
+   
+     ``(gdb) b 9``	表示在第九行设置断点（可先用list命令列出源码）
+
+     ``(gdb) b 函数名`` 表示在某个函数开头设置断点
+   
+3. continue(c)命令连续运行而非单步运行，程序到达断点会停下来
+
+4. info(i)命令还可以查看设置的断点
+
+    ``(gdb) i breakpoints``
+
+5. delete命令删除断点
+
+    ``(gdb) delete breakpoints 数字`` 删除某个断点
+    
+    ``(gdb) delete breakpoints`` 删除所有断点
+
