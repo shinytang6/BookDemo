@@ -22,7 +22,7 @@
 
 1. readelf工具可读出目标文件的 ELF Header 和 Section Header Table
 
-		$ readelf -a xxx.o 或者 $ readelf -a xxx
+        $ readelf -a xxx.o 或者 $ readelf -a xxx
 
 2. ELF Header描述了体系结构和操作系统等基本信息，Section Header Table中保存了所有Section的描述信息，Program Header Table中保存了所有Segment的描述信息
 
@@ -30,12 +30,12 @@
 
 #### 四.hexdump工具
 
-hexdump工具可把目标文件的字节全部打印出来
+1. hexdump工具可把目标文件的字节全部打印出来
 
-		$ hexdump -C xxx.o
+	    $ hexdump -C xxx.o
 
 #### 五.objdump工具
 
-objdump工具可以把程序中的机器指令反汇编
+1. objdump工具可以把程序中的机器指令反汇编
 
 		$ objdump -d xxx.o 或者 $ objdump -d xxx
