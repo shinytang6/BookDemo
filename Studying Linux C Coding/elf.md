@@ -20,7 +20,7 @@
 
 #### 三.readelf工具
 
-1. readelf工具可读出目标文件的 ELF Header 和 Section Header Table
+1. readelf工具可读出目标文件或可执行文件的 ELF Header 和 Section Header Table
 
         $ readelf -a xxx.o 或者 $ readelf -a xxx
 
@@ -39,3 +39,20 @@
 1. objdump工具可以把程序中的机器指令反汇编
 
 		$ objdump -d xxx.o 或者 $ objdump -d xxx
+
+
+#### 六.汇编、链接命令
+
+1. 汇编命令
+		
+		$ as xxx.s -o xxx.o
+
+2. 链接命令
+
+		$ ld xxx.o -o xxx
+
+3. 之前常用的gcc xxx.c -o xxx也可分为三步：
+
+		$ gcc -S xxx.c
+        $ gcc -c xxx.s
+        $ gcc xxx.o
