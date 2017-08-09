@@ -12,3 +12,4 @@
 * [Url Route](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/url%20route.md)
 * [ECMAScript](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/ecmascript.md)
 * [Tag A Href](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/tag%20a%20href.md)
+* [Server Deployment](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/server%20deployment.md)
