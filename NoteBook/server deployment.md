@@ -175,3 +175,11 @@
 		apt install -y php7.0-gd php7.0-mbstring php7.0-xmlrpc
 
 7. 访问你的域名，就可以看到WordPress的默认页面了
+
+
+
+参考：
+
+1. [从零部署一个网站](https://www.codecasts.com/series/deploy-a-website-from-scratch)
+2. [Ubuntu LNMP 部署 WordPress：环境准备](https://www.codecasts.com/blog/post/lnmp-wordpress-deploy-environment-setup)
+3. [Ubuntu LNMP 部署 WordPress](https://www.codecasts.com/blog/post/deploy-wordpress-on-lnmp)
