@@ -99,7 +99,7 @@
 
 		quit
 
-注：上面的用户名和密码要根据自己的需求设置
+		注：上面的用户名和密码要根据自己的需求设置
 
 3. 配置 Nginx
 
@@ -137,6 +137,41 @@
 
 		}
 
-4. 输入域名访问网站来到WordPress的页面
+4. 配置完成后重启下Nginx服务
 
-		
+		$ service nginx restart
+
+5. 完成到这一步，我们输入域名可以访问到Nginx的安装教程页面
+
+		根据要求填完信息后提交，然后会显示一个页面提示：
+
+		抱歉，我不能写入wp-config.php文件，您可以手工创建wp-config.php文件并将以下信息贴入其中。
+
+		然后我们来手工创建wp-config.php
+
+		$ cd /var/www/wordpress
+
+		//赋予权限
+		$ chown -R www-data:www-data /var/www/wordpress
+
+		$ vim wp-config.php
+
+		然后将网页中提示的代码复制进去
+
+		点击继续安装并按相关要求填写后就可以成功安装WordPress啦
+
+6. 配置WordPress文件上传
+
+		再次打开wp-config.php文件，将下面三行代码复制进去：
+
+		define('FS_METHOD', 'direct');
+
+		define('FS_CHMOD_DIR', 0777);
+
+		define('FS_CHMOD_FILE', 0777);
+
+		//安装其他的 php 扩展
+
+		apt install -y php7.0-gd php7.0-mbstring php7.0-xmlrpc
+
+7. 访问你的域名，就可以看到WordPress的默认页面了
