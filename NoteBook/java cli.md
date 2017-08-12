@@ -78,4 +78,16 @@
 		G:
 		cd net/test
 		javac HelloWorld.java
-		注：此时G:\下将生成一个HelloWorld.class的文件
+		注：此时G:\net\test下将生成一个HelloWorld.class的文件
+
+	2) 运行
+
+		命令行下继续敲：
+		// 运行时候需要注意了，不能到文件的根目录，是到文件的包目录的上层目录——可以理解为工程目录下，然后运行，否则会报错
+		// 回到G:根目录
+		cd ..
+		cd ..
+		java net.test.HelloWorld
+
+		
+		
