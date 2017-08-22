@@ -13,19 +13,19 @@
 
 ##### 一. Demo1
 
-这个demo利用了websocket官网的echo服务器 `ws://echo.websocket.org` 入门
+利用了websocket官网的echo服务器 `ws://echo.websocket.org` 入门
 
 websocket官网 ： [ws://echo.websocket.org](ws://echo.websocket.org)
 
 ##### 二. Demo2
 
-这个demo利用nodejs-websocket自己写了个本地服务器，运行在8001端口，并重新实现了Demo2例子
+利用了nodejs-websocket自己写了个本地服务器，运行在8001端口，并重新实现了Demo2例子
 
 nodejs-websocket包地址：[https://github.com/sitegui/nodejs-websocket](https://github.com/sitegui/nodejs-websocket)
 
 ##### 三. Demo3
 
-这个demo利用nodejs-websocket包实现了一个简单的聊天室
+利用了nodejs-websocket包实现了一个简单的聊天室
 
 ##### 四. Demo4
 
@@ -43,4 +43,4 @@ socke.io官网：[https://socket.io/blog/](https://socket.io/blog/)
 
 ##### 六. Demo6
 
-这个demo用socket.io重写了demo4中的聊天室，可以说简单了许多
+使用了socket.io重写了demo4中的聊天室，可以说代码简单了许多
