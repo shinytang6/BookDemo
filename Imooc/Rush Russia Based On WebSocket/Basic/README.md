@@ -17,7 +17,7 @@
 
 `ws://echo.websocket.org` 
 
-websocket官网 ： [ws://echo.websocket.org](ws://echo.websocket.org)
+websocket官网 ： [http://www.websocket.org/](http://www.websocket.org/)
 
 ##### 二. Demo2
 
