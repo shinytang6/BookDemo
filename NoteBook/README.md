@@ -15,3 +15,4 @@
 * [Server Deployment](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/server%20deployment.md)
 * [Java Cli](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/java%20cli.md)
 * [WebSocket](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/websocket.md)
+* [Cross-domain Policy](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/cross-domain%20policy.md)
