@@ -38,3 +38,10 @@ server端通过`request.getParameter`是可以取到值的。
 > multipart/form-data：既可以上传文件等二进制数据，也可以上传表单键值对，只是最后会转化为一条信息。     
 >       
 > x-www-form-urlencoded：只能上传键值对，并且键值对都是间隔分开的。
+
+
+参考文章：
+
+* [HTTP中application/x-www-form-urlencoded字符说明](http://blog.csdn.net/qq_28702545/article/details/51719199)
+* [postman中 form-data、x-www-form-urlencoded、raw、binary的区别](http://blog.csdn.net/ye1992/article/details/49998511)
+* [form enctype:"multipart/form-data",method:"post" 提交表单，后台获取不到数据](http://www.cnblogs.com/greenteaone/p/4186619.html)
