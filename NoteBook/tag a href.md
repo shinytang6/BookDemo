@@ -7,7 +7,7 @@
 
 下面是我原先写的download函数，目的是点击然后打开对应的官网，url从数据库中取出传给download函数，
 
-假设现在数据库中的一个url值为"www.baidu.com",那么这个函数将打开`http://localhost:xxxx/xx/www.baidu.com`这种相对路径页面，显然会报错
+假设现在数据库中的一个url值为`www.baidu.com`,那么这个函数将打开`http://localhost:xxxx/xx/www.baidu.com`这种相对路径页面，显然会报错
 
 	download(url){
                 window.open(url);
