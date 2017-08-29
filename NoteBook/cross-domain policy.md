@@ -53,7 +53,7 @@
 
 举例来说：
 
-A网页是http://w1.example.com/a.html，B网页是http://w2.example.com/b.html
+A网页是`http://w1.example.com/a.html`，B网页是`http://w2.example.com/b.html`
 
 那么只要设置相同的document.domain，两个网页就可以共享Cookie。
 
@@ -143,7 +143,9 @@ JSONP是服务器与客户端跨源通信的常用方法。最大特点就是简
 
 ##### WebSocket
 
-> WebSocket是一种通信协议，使用ws://（非加密）和wss://（加密）作为协议前缀。该协议不实行同源政策，只要服务器支持，就可以通过它进行跨源通信。
+> WebSocket是一种通信协议，使用ws://（非加密）和wss://（加密）作为协议前缀。
+> 
+> 该协议不实行同源政策，只要服务器支持，就可以通过它进行跨源通信。
 
 下面是一个例子，浏览器发出的WebSocket请求的头信息：
 
@@ -170,3 +172,12 @@ JSONP是服务器与客户端跨源通信的常用方法。最大特点就是简
 	Connection: Upgrade
 	Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
 	Sec-WebSocket-Protocol: chat
+
+
+##### CORS
+
+> ORS是跨源资源分享（Cross-Origin Resource Sharing）的缩写。
+> 
+> 它是W3C标准，是跨源AJAX请求的根本解决方法。相比JSONP只能发GET请求，CORS允许任何类型的请求。
+
+###### CROS 的设置，大部分是需要在服务端进行设置，在服务端设置之前，先来看一下 CROS 在浏览器中是怎么运作的：
