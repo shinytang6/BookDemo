@@ -83,6 +83,21 @@ var Game = function(){
         return true;
     }
   }
+
+  // 检测数据是否合法
+  var isValid = function(pos , data){
+    for(var i = 0; i < data.length; i++){
+        for(var j = 0; j < data[0].length; j++){
+            if(data[i][j] != 0){
+                if(!check(pos,i,j)){
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+  }
+
   // 清除数据
   var clearData = function(){
     for(var i=0; i < cur.data.length; i++){
@@ -99,6 +114,7 @@ var Game = function(){
     for(var i=0; i < cur.data.length; i++){
         for(var j=0; j<cur.data[0].length; j++ ){
             if(check(cur.origin,i,j)){
+                console.log(cur.origin.x)
                gameData[cur.origin.x+i][cur.origin.y+j] = cur.data[i][j];
             }
         }
@@ -107,11 +123,47 @@ var Game = function(){
   
   // 下移
   var down = function(){
-    clearData();
-    cur.origin.x = cur.origin.x +1;
-    setData();
-    refreshDiv(gameData,gameDivs);
+    if(cur.canDown(isValid)){
+        clearData();
+        cur.down();
+        setData();
+        refreshDiv(gameData,gameDivs);
+        return true;
+    } else{
+        return false;
+    }
   }
+
+  // 左移
+  var left = function(){
+    if(cur.canLeft(isValid)){
+        clearData();
+        cur.left();
+        setData();
+        refreshDiv(gameData,gameDivs);
+    }
+  }
+
+  // 右移
+  var right = function(){
+    if(cur.canRight(isValid)){
+        clearData();
+        cur.right();
+        setData();
+        refreshDiv(gameData,gameDivs);
+    }
+  }
+
+  // 旋转
+  var rotate = function(){
+    if(cur.canRotate(isValid)){
+        clearData();
+        cur.rotate();
+        setData();
+        refreshDiv(gameData,gameDivs);
+    }
+  }
+
   //初始化
   var init = function(doms){
     gameDiv = doms.gameDiv;
@@ -130,4 +182,10 @@ var Game = function(){
   // 导出API
   this.init = init;
   this.down = down;
+  this.left = left;
+  this.right = right;
+  this.rotate = rotate;
+  this.fall = function(){
+    while(down()){};
+  };
 }
