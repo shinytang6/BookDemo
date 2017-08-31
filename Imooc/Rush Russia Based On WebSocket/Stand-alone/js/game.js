@@ -2,6 +2,11 @@ var Game = function(){
     // dom元素
     var gameDiv;
     var nextDiv;
+    var timeDiv;
+    var scoreDiv;
+    var resultDiv;
+    // 分数
+    var score = 0;
     // 游戏矩阵
     var gameData = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -114,7 +119,6 @@ var Game = function(){
     for(var i=0; i < cur.data.length; i++){
         for(var j=0; j<cur.data[0].length; j++ ){
             if(check(cur.origin,i,j)){
-                console.log(cur.origin.x)
                gameData[cur.origin.x+i][cur.origin.y+j] = cur.data[i][j];
             }
         }
@@ -180,6 +184,7 @@ var Game = function(){
 
   // 消行
   var checkClear = function(){
+    var line = 0;
     for(var i=gameData.length-1;i>=0;i--){
         var clear = true;
         for(var j=0;j<gameData[0].length;j++){
@@ -189,6 +194,7 @@ var Game = function(){
             }
         }
         if(clear){
+            line = line + 1;
             for(var m=i; m>0; m--){
                 for(var n=0; n<gameData[0].length; n++){
                     gameData[m][n] = gameData[m-1][n];
@@ -200,6 +206,7 @@ var Game = function(){
             i++;
         }
     }
+    return line;
   }
 
   // 检查游戏结束
@@ -222,16 +229,68 @@ var Game = function(){
         refreshDiv(next.data,nextDivs);
   }
 
-  //初始化
-  var init = function(doms){
+  // 设置时间
+  var setTime = function(time){
+    timeDiv.innerHTML = time;
+  }
+
+  // 加分
+  var addScore = function(line){
+    var s = 0;
+    switch(line){
+        case 1:
+            s = 10;
+            break;
+        case 2:
+            s = 30;
+            break;
+        case 3:
+            s = 60;
+            break;
+        case 4:
+            s = 100;
+            break;
+        default:
+            break;
+    }
+    score = score + s;
+    scoreDiv.innerHTML = score;
+  }
+
+  // 游戏结束
+  var gameOver = function(win){
+        if(win){
+            resultDiv.innerHTML = "你赢了";
+        } else{
+            resultDiv.innerHTML = "你输了";
+        }
+  }
+
+  // 底部增加行
+  var addTailLines = function(lines){
+    for(var i=0; i<gameData.length - lines.length; i++){
+        gameData[i] = gameData[i + lines.length];
+    }
+    for(var i=0; i<lines.length; i++){
+        gameData[gameData.length - lines.length + i] = lines[i];
+    }
+    cur.origin.x = cur.origin.x - lines.length;
+    if(cur.origin.x < 0){
+        cur.origin.x = 0;
+    }
+    refreshDiv(gameData,gameDivs);
+  }
+
+  // 初始化
+  var init = function(doms,type,dir){
     gameDiv = doms.gameDiv;
     nextDiv = doms.nextDiv;
-    cur = SquareFactory.prototype.make(2,2);
-    next = SquareFactory.prototype.make(4,3);
+    timeDiv = doms.timeDiv;
+    scoreDiv = doms.scoreDiv;
+    resultDiv = doms.resultDiv;
+    next = SquareFactory.prototype.make(type,dir);
     initDiv(gameDiv,gameData,gameDivs);
     initDiv(nextDiv,next.data,nextDivs);
-    setData();
-    refreshDiv(gameData,gameDivs);
     refreshDiv(next.data,nextDivs);
   }
 
@@ -248,4 +307,8 @@ var Game = function(){
   this.performNext = performNext;
   this.checkClear = checkClear;
   this.checkGameOver = checkGameOver;
+  this.setTime = setTime;
+  this.addScore = addScore;
+  this.gameOver = gameOver;
+  this.addTailLines = addTailLines;
 }
