@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This repo aims to record some notes in the books following.
+This repo aims to record some notes during my study.
 
 ## Contents
 
