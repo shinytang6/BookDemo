@@ -1,47 +1,45 @@
-var Remote = function(){
+var Remote = function(socket){
     // 游戏对象
     var game;
     // 绑定按钮事件
     var bindEvents = function(){
-        document.getElementById("down").onclick = function(){
-            game.down();
-        }
-        document.getElementById("left").onclick = function(){
-            game.left();
-        }
-        document.getElementById("right").onclick = function(){
-            game.right();
-        }
-        document.getElementById("rotate").onclick = function(){
-            game.rotate();
-        }
-        document.getElementById("fall").onclick = function(){
-            game.fall();
-        }
-        document.getElementById("fixed").onclick = function(){
-            game.fixed();
-        }
-        document.getElementById("performNext").onclick = function(){
-            game.performNext(2,2);
-        }
-        document.getElementById("checkClear").onclick = function(){
-            game.checkClear();
-        }
-        document.getElementById("checkGameOver").onclick = function(){
-            game.checkGameOver();
-        }
-        document.getElementById("setTime").onclick = function(){
-            game.setTime(20);
-        }
-        document.getElementById("addScore").onclick = function(){
-            game.addScore(1);
-        }
-        document.getElementById("gameOver").onclick = function(){
-            game.gameOver(true);
-        }
-        document.getElementById("addTailLines").onclick = function(){
-            game.addTailLines([[0, 1, 0, 1, 0, 1, 0, 1, 0, 1]]);
-        }
+       socket.on("init",function(data){
+        start(data.type, data.dir);
+       });
+       socket.on("next",function(data){
+        game.performNext(data.type,data.dir);
+       });
+       socket.on("rotate",function(data){
+        game.rotate();
+       });
+       socket.on("right",function(data){
+        game.right();
+       });
+       socket.on("down",function(data){
+        game.down();
+       });
+       socket.on("left",function(data){
+        game.left();
+       });
+       socket.on("fall",function(data){
+        game.fall();
+       });
+       socket.on("fixed",function(data){
+        game.fixed();
+       });
+       socket.on("line",function(data){
+        game.checkClear();
+        game.addScore(data);
+       });
+       socket.on("time",function(data){
+        game.setTime(data);
+       });
+       socket.on("lose",function(data){
+        game.gameOver(false);
+       });
+       socket.on("addTailLines",function(data){
+        game.addTailLines(data);
+       });
 
     }
     // 开始
@@ -56,7 +54,8 @@ var Remote = function(){
         game = new Game();
         game.init(doms,type,dir);
     }
-    // 导出API
-    this.start = start;
-    this.bindEvents = bindEvents;
+    // // 导出API
+    // this.start = start;
+    // this.bindEvents = bindEvents;
+    bindEvents();
 }
