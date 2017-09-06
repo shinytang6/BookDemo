@@ -1,4 +1,4 @@
-##　CSS Authoritaive Guide
+## CSS Authoritaive Guide
 ###
 
 > Here are my note while reading this book.
