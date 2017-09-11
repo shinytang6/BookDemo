@@ -4,9 +4,9 @@
 
 This repo aims to record some notes during my study.
 
-## Contents
+### Contents
 
-### List
+#### List
 
 Here l list some books and notes that l have ever read and written.
 
