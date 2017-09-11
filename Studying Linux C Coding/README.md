@@ -1,5 +1,5 @@
-### Studying Linux C Coding
-##
+## Studying Linux C Coding
+###
 
 *Here l wanna write some algorithms and share some useful tools.*
 
