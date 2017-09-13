@@ -144,7 +144,7 @@
 
 	span {border: 1px solid black; padding: 4px;}
 
-至于外边距，实际上，外边距不会应用到行内非替换元素的顶端和底端（即`margin-top`和`margin-bottom`无效），不过，两端则是有效的（即`margin-left`和`margin-right`有效）
+至于外边距，实际上，外边距不会应用到行内非替换元素的顶端和底端（即`margin-top`和`margin-bottom`无效），不过，两端则是有效的（即`margin-left`和`margin-right`有效）。
 
 
 ##### 行内替换元素
