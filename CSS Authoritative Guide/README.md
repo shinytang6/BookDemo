@@ -1,8 +1,12 @@
 ## CSS Authoritaive Guide
 ###
 
-> Here are my note while reading this book.
+### Introduction
  
+Here are my note while reading this book.
+ 
+### List
+
 * [Chapter 2](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide/Chapter%202)
 * [Chapter 3](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide/Chapter%203)
 * [Chapter 4](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide/Chapter%204)
@@ -16,3 +20,5 @@
 * [Chapter 12](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide/Chapter%2012)
 * [Chapter 13](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide/Chapter%2013)
 * [Chapter 14](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide/Chapter%2014)
+
+
