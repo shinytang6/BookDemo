@@ -17,5 +17,5 @@ Here l list some books and notes that l have ever read and written.
 * [Diagram HTTP](https://github.com/shinytang6/BookDemo/tree/master/Diagram%20HTTP)
 * [Notebook](https://github.com/shinytang6/BookDemo/tree/master/NoteBook)
 * [Master Spring 4.x Enterprise Application Development Combat](https://github.com/shinytang6/BookDemo/tree/master/Master%20Spring%204.x%20Enterprise%20Application%20Development%20Combat)
-* [CSS Authoritative Guide]()
-* [HTTP Authoritative Guide]()
+* [CSS Authoritative Guide](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide)
+* [The First Line Of Code——Android]()
