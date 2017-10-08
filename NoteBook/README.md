@@ -17,3 +17,5 @@
 * [WebSocket](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/websocket.md)
 * [Cross-domain Policy](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/cross-domain%20policy.md)
 * [DPR](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/dpr.md)
+* [CSS Line-height](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/css%20line-height.md)
+* [CSS Flex](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/css%20flex.md)
