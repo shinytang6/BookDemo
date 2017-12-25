@@ -18,6 +18,4 @@ Here l list some books and notes that l have ever read and written.
 * [Notebook](https://github.com/shinytang6/BookDemo/tree/master/NoteBook)
 * [Master Spring 4.x Enterprise Application Development Combat](https://github.com/shinytang6/BookDemo/tree/master/Master%20Spring%204.x%20Enterprise%20Application%20Development%20Combat)
 * [CSS Authoritative Guide](https://github.com/shinytang6/BookDemo/tree/master/CSS%20Authoritative%20Guide)
-* [The First Line Of Code——Android]()
 * [Computer Networking A Top-Down Approach](https://github.com/shinytang6/BookDemo/tree/master/Computer%20Networking%20A%20Top-Down%20Approach)
-* [Modern Compiler Implementation In C]()
