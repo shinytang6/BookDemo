@@ -9,7 +9,7 @@ namespace UF1 {
 	class UnionFind{
 
 	private:
-		int* id;   // 第一版Union-Find本质就是一个数组
+		int* id;     // 第一版Union-Find本质就是一个数组
 		int count;   // 数据个数
 
 	public:
@@ -32,14 +32,14 @@ namespace UF1 {
 		}
 
 		// 查看元素p和元素q是否所属一个集合
-        // O(1)复杂度
+		// O(1)复杂度
 		bool isConnected(int p, int	q){
 			return find(p) == find(q);
 		}
 
 
 		// 合并元素p和元素q所属的集合
-        // O(n) 复杂度
+		// O(n) 复杂度
 		void unionElements(int p, int q){
 			int pID = find(p);
 			int qID = find(q);
