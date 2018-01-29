@@ -15,7 +15,7 @@ int main() {
 
     SparseGraph<int> g = SparseGraph<int>(V, true);
 	// 如果是无向图，只要有一条边带负权，就算是负权环，若不存在负权环，用Dijkstra算法效率更高
-	// Dijkstra算法复杂度为O(ElogE), Bellman-Ford算法复杂度为O(EV)
+	// Dijkstra算法复杂度为O(ElogV), Bellman-Ford算法复杂度为O(EV)
 	// SparseGraph<int> g = SparseGraph<int>(V, false);
     ReadGraph<SparseGraph<int>, int> readGraph(g, filename);
 
