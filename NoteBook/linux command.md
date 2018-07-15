@@ -343,3 +343,7 @@ r=4，w=2，x=1
 
 		// 与chmod =r file等价
 		chmod 444 file
+
+
+
+参考: [https://blog.csdn.net/young_kim1/article/list/3](https://blog.csdn.net/young_kim1/article/list/3)
