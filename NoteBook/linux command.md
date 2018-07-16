@@ -345,5 +345,86 @@ r=4，w=2，x=1
 		chmod 444 file
 
 
+## 11. tar
+
+> ar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。
+
+> 首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。
+
+> 为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。
+
+> linux下最常用的打包程序就是tar了，使用tar程序打出来的包我们常称为tar包，tar包文件的命令通常都是以.tar结尾的。生成tar包后，就可以用其它的程序来进行压缩。
+
+#### 格式
+
+	tar[必要参数][选择参数][文件]
+
+
+#### 例子
+
+1. 仅打包，不压缩！ 
+
+		tar -cvf log.tar log2012.log
+
+2. 打包后，以 gzip 压缩 
+
+		tar -zcvf log.tar.gz log2012.log
+
+3. 打包后，以 bzip2 压缩
+
+		tar -jcvf log.tar.bz2 log2012.log
+
+> 在参数 f 之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加 z 参数，则以 .tar.gz 或 .tgz 来代表 gzip 压缩过的 tar包； 如果加 j 参数，则以 .tar.bz2 来作为tar包名。
+
+
+4. 将tar 包解压缩
+
+		tar -zxvf /opt/soft/test/log.tar.gz
+
+5. 将下载的源码包解压至 /usr/local目录
+
+		tar -C /usr/local -xzf xx.tar.gz
+
+
+## 12. chgrp
+
+> 在linux系统里，文件或目录的权限由拥有者及所属群组来管理。可以使用chgrp指令去变更文件与目录所属群组，这种方式采用群组名称或群组识别码都可以。Chgrp命令就是change group的缩写！要被改变的组名必须要在/etc/group文件内存在才行。
+
+#### 格式
+
+	chgrp [选项] [组] [文件]
+
+#### 例子
+
+1. 将log2012.log文件由root群组改为bin群组
+
+		chgrp -v bin log2012.log
+
+2. 改变指定目录以及其子目录下的所有文件的群组属性
+
+		chgrp -R bin test6
+
+
+## 13. chown
+
+> chown将指定文件的拥有者改为指定的用户或组，用户可以是用户名或者用户ID；组可以是组名或者组ID；文件是以空格分开的要改变权限的文件列表，支持通配符。系统管理员经常使用chown命令，在将文件拷贝到另一个用户的名录下之后，让用户拥有使用该文件的权限
+
+#### 格式
+
+	chown [选项]… [所有者][:[组]] 文件… 
+
+#### 例子
+
+1. 改变拥有者和群组
+
+		chown mail:mail log2012.log 
+
+2. 改变文件群组
+
+		chown :mail log2012.log
+
+3. 改变指定目录以及其子目录下的所有文件的拥有者和群组
+
+		chown -R -v root:mail test6 
 
 参考: [https://blog.csdn.net/young_kim1/article/list/3](https://blog.csdn.net/young_kim1/article/list/3)
