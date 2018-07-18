@@ -506,4 +506,91 @@ r=4，w=2，x=1
 		gzip -d 文件名
 
 
+## 16. date
+
+> date 可以用来显示或设定系统的日期与时间。
+
+## 17. cal
+
+> 用于查看日历等时间信息，如只有一个参数，则表示年份(1-9999)，如有两个参数，则表示月份和年份
+
+#### 例子
+
+1. 显示当前月份日历
+
+		cal
+
+2. 显示指定月份的日历
+
+		cal 9 2012	
+
+## 18. grep
+
+> Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。
+
+> grep的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到标准输出，不影响原文件内容。
+
+> grep可用于shell脚本，因为grep通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回0，如果搜索不成功，则返回1，如果搜索的文件不存在，则返回2。我们利用这些返回值就可进行一些自动化的文本处理工作。
+
+#### 格式
+
+	grep [option] pattern file
+
+#### 例子
+
+1. 查找指定进程
+
+		ps -ef | grep svn
+
+2. 查找指定进程个数
+
+		ps -ef|grep -c svn
+
+3. 从文件中读取关键词进行搜索 (输出test.txt文件中含有从test2.txt文件中读取出的关键词的内容行)
+
+		cat test.txt | grep -f test2.txt
+
+4. 从文件中读取关键词进行搜索 且显示行号
+
+		cat test.txt | grep -nf test2.txt
+
+5. 从文件中查找关键词
+
+		grep "xxx" test.txt
+
+6. 从多个文件中查找关键词
+
+		grep "xxx" test1.txt test2.txt
+
+7. 找出以u开头的行内容
+
+		cat test.txt | grep ^u	
+
+8. 输出以hat结尾的行内容
+
+		cat test.txt | grep hat$
+
+9. 显示包含ed或者at字符的内容行
+
+		cat test.txt | grep -E "ed|at"
+
+## 19. wc
+
+> Linux系统中的wc(Word Count)命令的功能为统计指定文件中的字节数、字数、行数，并将统计结果显示输出。
+
+#### 格式
+
+	wc [选项]文件…
+
+#### 例子
+
+1. 查看文件的字节数、字数、行数
+
+		wc test.txt
+
+		说明：
+		
+		7 8 70 test.txt 
+		行数 单词数 字节数 文件名
+
 参考: [https://blog.csdn.net/young_kim1/article/list/3](https://blog.csdn.net/young_kim1/article/list/3)
