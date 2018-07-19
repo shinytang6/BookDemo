@@ -593,4 +593,45 @@ r=4，w=2，x=1
 		7 8 70 test.txt 
 		行数 单词数 字节数 文件名
 
+## 19. ps
+
+> Linux中的ps命令是Process Status的缩写。ps命令用来列出系统中当前运行的那些进程。ps命令列出的是当前那些进程的快照，就是执行ps命令的那个时刻的那些进程，如果想要动态的显示进程信息，就可以使用top命令。
+
+#### 命令格式
+
+	ps [参数]
+
+#### 例子
+
+1. 显示所有进程信息
+
+		ps -A
+
+2. 显示指定用户信息
+
+		ps -u root
+
+3. 显示所有进程信息，连同命令行
+
+		ps -ef
+
+4. ps 与grep 常用组合用法，查找特定进程
+
+		ps -ef | grep ssh
+
+5. 将目前属于您自己这次登入的 PID 与相关信息列示出来
+
+		ps -l
+		
+		注：
+		ps 仅会列出与目前所在的 bash shell 有关的 PID 而已，所以， 当使用 ps -l 的时候，只有两个 PID
+
+6. 列出目前所有的正在内存当中的程序
+
+		ps aux
+
+7. 把所有进程显示出来，并输出到test.txt文件
+
+		ps -aux > test.txt
+
 参考: [https://blog.csdn.net/young_kim1/article/list/3](https://blog.csdn.net/young_kim1/article/list/3)
