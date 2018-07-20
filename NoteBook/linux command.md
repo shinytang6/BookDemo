@@ -634,4 +634,73 @@ r=4，w=2，x=1
 
 		ps -aux > test.txt
 
+
+## 20. kill
+
+> Linux中的kill命令用来终止指定的进程（terminate a process）的运行，是Linux下进程管理的常用命令。通常，终止一个前台进程可以使用Ctrl+C键，但是，对于一个后台进程就须用kill命令来终止，我们就需要先使用ps/pidof/pstree/top等工具获取进程PID，然后使用kill命令来杀掉该进程。kill命令是通过向进程发送指定的信号来结束相应进程的。在默认情况下，采用编号为15的TERM信号。TERM信号将终止所有不能捕获该信号的进程。对于那些可以捕获该信号的进程就要用编号为9的kill信号，强行“杀掉”该进程。
+
+#### 格式
+
+	kill [参数] [进程号]
+
+#### 命令参数
+
+	-l 信号，若果不加信号的编号参数，则使用“-l”参数会列出全部的信号名称 
+	-a 当处理当前进程时，不限制命令名和进程号的对应关系 
+	-p 指定kill 命令只打印相关进程的进程号，而不发送任何信号 
+	-s 指定发送信号 
+	-u 指定用户
+
+#### 例子
+
+1. 列出所有信号名称
+
+		kill -l
+
+		只有第9种信号(SIGKILL)才可以无条件终止进程，其他信号进程都有权利忽略。 
+		下面是常用的信号：
+		HUP 1 终端断线 
+		INT 2 中断（同 Ctrl + C） 
+		QUIT 3 退出（同 Ctrl + \） 
+		TERM 15 终止 
+		KILL 9 强制终止 
+		CONT 18 继续（与STOP相反， fg/bg命令） 
+		STOP 19 暂停（同 Ctrl + Z）
+
+2. 先用ps查找进程，然后用kill杀掉
+
+		ps -ef | grep vim
+		kill 进程号
+
+3. 彻底杀死进程
+
+		kill –9 进程号
+
+		kill -9 pid等于kill -s 9 pid 
+
+## 21. killall 
+
+> Linux系统中的killall命令用于杀死指定名字的进程（kill processes by name）。我们可以使用kill命令杀死指定进程PID的进程，如果要找到我们需要杀死的进程，我们还需要在之前使用ps等命令再配合grep来查找进程，而killall把这两个过程合二为一，是一个很好用的命令。
+
+## 格式
+
+	killall[参数][进程名]
+
+## 例子
+
+1. 杀死所有同名进程
+
+		killall vi
+
+2. 向进程发送指定信号
+
+		后台运行程序：vi & 
+		杀死vi进程：killall -TERM vi 或者 killall -KILL vi
+
+3. 把所有的登录后的shell给杀掉
+
+		killall -9 bash
+
+		运行命令：killall -9 bash 后，所有bash都会被卡掉了，所以当前所有连接丢失了。需要重新连接并登录。
+
 参考: [https://blog.csdn.net/young_kim1/article/list/3](https://blog.csdn.net/young_kim1/article/list/3)
