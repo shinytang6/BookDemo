@@ -734,5 +734,47 @@ r=4，w=2，x=1
 
 		free -s 10
 
+## 23. awk
+
+> awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
+
+#### 格式
+
+	awk '{pattern + action}' {filenames}
+
+#### 例子
+
+1. 每行按空格或TAB分割，输出文本中的1、4项
+
+		用法一： awk '{[pattern] action}' {filenames}   # 行匹配语句 awk '' 只能用单引号
+
+		# log.txt
+		2 this is a test
+		3 Are you like awk
+		This's a test
+		10 There are orange,apple,mongo
+
+		awk '{print $1,$4}' log.txt
+		---------------------------
+		2 a
+ 		3 like
+ 		This's
+ 		10 orange,apple,mongo
+
+2. 只是显示最近登录的5个帐号
+
+		last -n 5 | awk  '{print $1}'
+
+		awk工作流程是这样的：
+		读入有'\n'换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域,$1表示第一个域,$n表示第n个域。默认域分隔符是"空白键" 或 "[tab]键",所以$1表示登录用户，$3表示登录用户ip,以此类推。
+
+3. 只是显示/etc/passwd的账户
+
+		cat /etc/passwd |awk  -F ':'  '{print $1}'
+		-F指定域分隔符为':'
+
+4. 只是显示/etc/passwd的账户和账户对应的shell,而账户与shell之间以tab键分割
+
+		cat /etc/passwd |awk  -F ':'  '{print $1"\t"$7}'
 
 参考: [https://blog.csdn.net/young_kim1/article/list/3](https://blog.csdn.net/young_kim1/article/list/3)
