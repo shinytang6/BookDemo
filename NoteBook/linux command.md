@@ -703,4 +703,36 @@ r=4，w=2，x=1
 
 		运行命令：killall -9 bash 后，所有bash都会被卡掉了，所以当前所有连接丢失了。需要重新连接并登录。
 
+## 22. free 
+
+> free命令可以显示Linux系统中空闲的、已用的物理内存及swap内存,及被内核使用的buffer。在Linux系统监控的工具中，free命令是最经常使用的命令之一。
+
+#### 格式
+
+	free [参数]
+
+#### 参数
+
+	-b 　以Byte为单位显示内存使用情况。 
+	-k 　以KB为单位显示内存使用情况。 
+	-m 　以MB为单位显示内存使用情况。 
+	-g 以GB为单位显示内存使用情况。 
+	-o 　不显示缓冲区调节列。 
+	-s <间隔秒数> 　持续观察内存使用状况。 
+	-t 　显示内存总和列。 
+	-V 　显示版本信息。
+
+#### 例子
+
+1. 显示内存使用情况
+
+		free 
+		free -g 
+		free -m
+
+2. 周期性的查询内存使用信息
+
+		free -s 10
+
+
 参考: [https://blog.csdn.net/young_kim1/article/list/3](https://blog.csdn.net/young_kim1/article/list/3)
