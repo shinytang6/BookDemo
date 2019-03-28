@@ -18,7 +18,7 @@
 
 1. 安装Privoxy
 
-       sudo apt install privoxy
+       sudo apt-get install privoxy
        
 2. 修改配置文件
 

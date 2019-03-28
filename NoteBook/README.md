@@ -21,6 +21,8 @@
 * [Java Cli](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/java%20cli.md)
 * [Js That](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/js%20that.md)
 * [Linux Command](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/linux%20command.md)
+* [PPTP Vpn](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/pptp%20vpn.md)
+* [Privoxy](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/privoxy.md)
 * [Server Deployment](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/server%20deployment.md)
 * [Tag A Href](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/tag%20a%20href.md)
 * [Url Route](https://github.com/shinytang6/BookDemo/blob/master/NoteBook/url%20route.md)
