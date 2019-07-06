@@ -232,3 +232,11 @@ visual模式一般用来块状选择文本：
     <ctrl-x><ctrl-f> 文件名补全
     <ctrl-x><ctrl-o> 全能补全(需要开启文件类型检查，安装插件)
     
+#### 21. 更换配色
+
+    1. 使用:colorscheme显示当前主题配色
+    2. 使用:colorscheme <ctrl+d>可以显示所有配色
+    3. 用:colorscheme 配色名就可以修改配色，当然也可以在vimrc中持久化配色
+    
+#### 22. 映射
+    
