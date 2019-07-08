@@ -240,3 +240,18 @@ visual模式一般用来块状选择文本：
     
 #### 22. 映射
     
+    vim映射就是把一个操作映射到另一个操作
+    
+    以基本映射为例子，基本映射指的是normal模式下的映射，当然还有其他模式下的映射
+    - 使用map就可以实现映射。比如:map - x 然后按-就会删除字符
+    - :map <space> viw告诉vim按下空格时选中整个单词
+    - :map <c-d> dd可以使用ctrl+d执行dd删除一行
+    
+    vim常用模式normal/visual/insert都可以定义映射
+    - 用nmap/vmap/imap定义映射只在normal/visual/insert分别有效
+    - :vmap \ U把在visual模式下选中的文本大小(u/U转换大小写)
+    - :imap <c-d> <Esc>ddi 在insert模式下映射ctrl+d删除一行
+    
+    *map系列命令有递归的风险，解决方案就是使用非递归映射
+    - 使用*map对应的noremap/nnoremap/vnoremap/inoremap
+    - 任何时候都应该使用非递归映射，拯救自己和插件作者
