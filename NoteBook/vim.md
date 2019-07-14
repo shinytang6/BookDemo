@@ -255,3 +255,35 @@ visual模式一般用来块状选择文本：
     *map系列命令有递归的风险，解决方案就是使用非递归映射
     - 使用*map对应的noremap/nnoremap/vnoremap/inoremap
     - 任何时候都应该使用非递归映射，拯救自己和插件作者
+    
+#### 23. 插件
+
+    安装插件步骤，我是使用vim-plug来管理插件
+    1. 修改.vimrc文件，增加插件名称
+    2. 重启vim，执行:PlugInstall
+
+    好用插件列表：
+    1. vim-startify: 一个好用的vim开屏插件，修改启动界面   
+    2. lightline.vim: 状态栏美化(vim-airline功能类似，但我觉得没有lightline好看)
+    3. indentline: 增加代码缩进线条
+    4. vim-hybrid-material: 配色方案
+    5. nerdtree: 文件目录树管理
+        - 映射了<,>+v 查找文件位置(可快速从别的窗口切回nerdtree)
+        - 映射了<,>+g 打开/关闭nerdtree
+    6. ctrlp: 快速搜索文件名并打开文件(文件搜索)
+        - 模糊搜索器
+        - 映射了<ctrl>+p触发ctrlp
+        - 使用<ctrl>+p查找到文件后使用<,>+v可快速定位到文件位置
+    7. easymotion: 快速跳转到当前窗口任意位置
+        - 也可以使用vim的搜索/加上n跳转，但是使用easymotion更方便
+        - 映射了ss根据需求跳转
+    8. fzf.vim: 模糊搜索文本
+        - 使用Ag [PATTERN]模糊搜索字符串
+        - 使用Files [PATH]模糊搜索目录(和ctrlp类似)
+    9. vim-go
+        - Go代码补全，重构，跳转，自动格式化，自动导入
+    10. python-mode
+        - Python代码补全，重构，跳转，自动格式化，自动导入
+    11. vim-interestingwords: 高亮感兴趣的单词，对浏览代码有用
+        - <,>+k高亮单词
+        - <,>+K清除所有单词高亮
