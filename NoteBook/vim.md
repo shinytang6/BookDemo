@@ -287,3 +287,25 @@ visual模式一般用来块状选择文本：
     11. vim-interestingwords: 高亮感兴趣的单词，对浏览代码有用
         - <,>+k高亮单词
         - <,>+K清除所有单词高亮
+    12. vim-commentary: 快速注释代码
+        - 常用命令gc来注释和取消注释
+        - 插件会根据不同的文件类型使用不同的注释
+        
+#### 24. Tmux
+
+    tmux 中有几个重要概念：
+    
+    1. 会话(session): 建立一个 tmux 工作区会话，会话可以长期驻留，重新连接服务器不会丢失，我们只需重新 tmux attach 到之前的工作区就可以恢复会话
+    2. 窗口(window): 容纳多个窗格
+    3. 窗格(pane): 可以在窗口中分成多个窗格
+    
+    常用命令：
+    ctrl b+c: 创建新窗口
+    ctrl b+w: 切换窗口
+    ctrl b+d: 脱离会话
+    ctrl b+s: 查看会话
+    
+    tmux new -s xxx: 新建会话
+    tmux ls: 查看会话
+    tmux att -t xxx: 脱离会话后想继续attach到原会话
+    
